@@ -6,7 +6,8 @@
     "description": "Selected as one of the 4 Outstanding Students of 2025 as a first semester student",
     "type": "award",
     "icon": "trophy",
-    "rank": "Top 4"
+    "rank": "Top 4",
+    "assignmentId": 1
   },
   {
     "year": 2025,
