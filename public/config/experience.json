@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Freelance",
+    "company": "Self-Hired",
+    "period": "09/2020 – Present",
+    "location": "Remote",
+    "current": true,
+    "responsibilities": [
+      "Engineered and launched confidential, high-scale applications for clients in education, e-commerce, and B2B services, driving over 100,000 total usages across all projects",
+      "Architected full-stack solutions using Flutter (Mobile/Web), TypeScript (Backend/Frontend), and Go, implementing clean architecture, state management, and REST/GraphQL APIs",
+      "Owned the complete development lifecycle from concept to deployment, optimizing for performance, security, and user experience"
+    ],
+    "techStack": ["Flutter", "TypeScript", "Go", "PostgreSQL", "MongoDB", "REST", "GraphQL"]
+  }
+]

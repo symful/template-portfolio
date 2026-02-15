@@ -1,0 +1,37 @@
+{
+  "name": "Kemal Ardian",
+  "title": "Web and Mobile Programmer",
+  "tagline": "Full-Stack Software Engineer",
+  "bio": "Engineered and launched confidential, high-scale applications for clients in education, e-commerce, and B2B services, driving over 100,000 total usages across all projects.",
+  "contact": {
+    "email": "kemalardian17@gmail.com",
+    "phone": "+62 831-7917-5748",
+    "location": "Pangkalpinang, Indonesia",
+    "website": "kemal.deno.dev",
+    "linkedin": "kemal-ardian-8375a7342",
+    "github": "kemal-ardian"
+  },
+  "avatar": "/assets/avatar.png",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/kemal-ardian",
+      "icon": "github"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/kemal-ardian-8375a7342",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "Website",
+      "url": "https://kemal.deno.dev",
+      "icon": "globe"
+    },
+    {
+      "platform": "Email",
+      "url": "mailto:kemalardian17@gmail.com",
+      "icon": "mail"
+    }
+  ]
+}
