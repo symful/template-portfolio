@@ -492,4 +492,5 @@ This portfolio is a personal project. Feel free to use as a template but please 
 
 ---
 
+
 Made with ❤️ by Kemal Ardian
