@@ -385,7 +385,7 @@ Main navigation bar with responsive mobile menu.
 2. **Build Configuration:**
    ```
    Build command: npm run build
-   Build output: .output/public
+   Build output: dist
    Node version: 18 or higher
    ```
 
