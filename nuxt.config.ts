@@ -73,11 +73,6 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: "cloudflare-pages",
-    cloudflare: {
-      wrangler: {
-        name: "template-portfolio",
-      },
-    },
   },
 
   typescript: {
