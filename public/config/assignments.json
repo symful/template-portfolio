@@ -16,9 +16,15 @@
       "JSON-configurable for easy customization",
       "Premium UI with 3D WebGL elements and animations"
     ],
-    "technologies": ["Nuxt 3", "TypeScript", "Tailwind CSS", "GSAP", "Three.js"],
-    "liveUrl": "https://portfolio.cloudflare.pages.dev",
-    "githubUrl": "https://github.com/kemal-ardian/portfolio",
+    "technologies": [
+      "Nuxt 3",
+      "TypeScript",
+      "Tailwind CSS",
+      "GSAP",
+      "Three.js"
+    ],
+    "liveUrl": "https://kardian.my.id",
+    "githubUrl": "https://github.com/symful/template-portfolio",
     "thumbnail": "/assets/assignments/assignment-1.png"
   },
   {
