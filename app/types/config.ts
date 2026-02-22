@@ -40,7 +40,6 @@ export interface Language {
 
 export interface Skill {
   name: string;
-  proficiency: number;
   icon: string;
 }
 
@@ -65,7 +64,7 @@ export interface Achievement {
   title: string;
   organization: string;
   description: string;
-  type: 'award' | 'competition';
+  type: "award" | "competition";
   icon: string;
   rank: string;
 }
@@ -94,7 +93,7 @@ export interface Organization {
 export interface Assignment {
   id: number;
   title: string;
-  type: 'website' | 'pdf' | 'image' | 'video';
+  type: "website" | "pdf" | "image" | "video";
   description: string;
   objectives: string[];
   results: string[];

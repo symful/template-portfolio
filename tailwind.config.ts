@@ -13,16 +13,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#10b981',        // Emerald green
-        secondary: '#059669',      // Deep emerald
-        accent: '#6ee7b7',         // Light emerald
-        'bg-primary': '#0a0a0a',   // True black
-        'bg-secondary': '#171717', // Neutral 900
-        'bg-tertiary': '#262626',  // Neutral 800
-        'text-primary': '#f5f5f5', // Neutral 100
-        'text-secondary': '#a3a3a3', // Neutral 400
-        'text-muted': '#737373',   // Neutral 500
-        border: '#404040',         // Neutral 700
+        primary: '#22c55e',        // Terminal Green
+        secondary: '#3b82f6',      // Blue accent
+        accent: '#f59e0b',         // Yellow accent
+        'bg-primary': '#1A1A1A',   // Very dark theme background
+        'bg-secondary': '#000000', // Black card backgrounds
+        'bg-tertiary': '#111827',  // Alternative dark background
+        'text-primary': '#ffffff', // White text
+        'text-secondary': '#9ca3af', // Gray text
+        'text-muted': '#6b7280',   // Darker gray text
+        border: '#1f2937',         // Dark gray borders
         success: '#22c55e',        // Green 500
         warning: '#f59e0b',        // Amber 500
         error: '#ef4444',          // Red 500

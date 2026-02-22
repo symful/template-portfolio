@@ -1,0 +1,468 @@
+{
+  "profile": {
+    "name": "Kemal Ardian",
+    "title": "Web and Mobile Programmer",
+    "tagline": "Full-Stack Software Engineer",
+    "bio": "Engineered and launched confidential, high-scale applications for clients in education, e-commerce, and B2B services, driving over 100,000 total usages across all projects.",
+    "contact": {
+      "email": "kemalardian17@gmail.com",
+      "phone": "+62 831-7917-5748",
+      "location": "Pangkalpinang, Indonesia",
+      "website": "kardian.my.id",
+      "linkedin": "kemal-ardian-8375a7342",
+      "github": "symful"
+    },
+    "avatar": "/assets/avatar.png",
+    "socialLinks": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/symful",
+        "icon": "github"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/kemal-ardian-8375a7342",
+        "icon": "linkedin"
+      },
+      {
+        "platform": "Website",
+        "url": "https://kardian.my.id",
+        "icon": "globe"
+      },
+      {
+        "platform": "Email",
+        "url": "mailto:kemalardian17@gmail.com",
+        "icon": "mail"
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "Applied Informatics Engineering",
+      "institution": "Bandung State Polytechnic",
+      "period": "2025 – Present",
+      "location": "Bandung, Indonesia",
+      "description": "Currently pursuing degree in Applied Informatics Engineering"
+    },
+    {
+      "degree": "Merdeka Curriculum",
+      "institution": "Public High School 3 Pangkalpinang",
+      "period": "2021 – 2025",
+      "location": "Pangkalpinang, Indonesia",
+      "description": "Graduated with Merdeka Curriculum"
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "level": "Advanced",
+      "certification": "TOEFL ITP",
+      "score": 600,
+      "maxScore": 677,
+      "percentage": 88.6
+    },
+    {
+      "language": "Indonesian",
+      "level": "Native Speaker",
+      "certification": "UKBI",
+      "score": 711,
+      "maxScore": 800,
+      "percentage": 88.9
+    }
+  ],
+  "skills": {
+    "languages": [
+      {
+        "name": "Dart",
+        "icon": "dart"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "typescript"
+      },
+      {
+        "name": "Go",
+        "icon": "go"
+      },
+      {
+        "name": "C++",
+        "icon": "cpp"
+      },
+      {
+        "name": "C#",
+        "icon": "csharp"
+      },
+      {
+        "name": "SQL",
+        "icon": "sql"
+      },
+      {
+        "name": "WebAssembly",
+        "icon": "wasm"
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "Flutter",
+        "icon": "flutter"
+      },
+      {
+        "name": "Deno",
+        "icon": "deno"
+      },
+      {
+        "name": "Node.js",
+        "icon": "nodejs"
+      },
+      {
+        "name": "Bun",
+        "icon": "bun"
+      },
+      {
+        "name": "NestJS",
+        "icon": "nestjs"
+      },
+      {
+        "name": "Firebase",
+        "icon": "firebase"
+      }
+    ],
+    "concepts": [
+      {
+        "name": "REST API",
+        "icon": "api"
+      },
+      {
+        "name": "GraphQL",
+        "icon": "graphql"
+      },
+      {
+        "name": "Clean Architecture",
+        "icon": "architecture"
+      },
+      {
+        "name": "State Management",
+        "icon": "state"
+      },
+      {
+        "name": "ARCore",
+        "icon": "ar"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "title": "Freelance",
+      "company": "Self-Hired",
+      "period": "09/2020 – Present",
+      "location": "Remote",
+      "current": true,
+      "responsibilities": [
+        "Engineered and launched confidential, high-scale applications for clients in education, e-commerce, and B2B services, driving over 100,000 total usages across all projects",
+        "Architected full-stack solutions using Flutter (Mobile/Web), TypeScript (Backend/Frontend), and Go, implementing clean architecture, state management, and REST/GraphQL APIs",
+        "Owned the complete development lifecycle from concept to deployment, optimizing for performance, security, and user experience"
+      ],
+      "techStack": [
+        "Flutter",
+        "TypeScript",
+        "Go",
+        "PostgreSQL",
+        "MongoDB",
+        "REST",
+        "GraphQL"
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "year": 2025,
+      "title": "Mahasiswa Berprestasi 2025",
+      "organization": "Bandung State Polytechnic",
+      "description": "Selected as one of the 4 Outstanding Students of 2025 as a first semester student",
+      "type": "award",
+      "icon": "trophy",
+      "rank": "Top 4",
+      "assignmentId": 1
+    },
+    {
+      "year": 2025,
+      "title": "Honorable Mention (45th) ICPC Asia Jakarta",
+      "organization": "Bina Nusantara University",
+      "description": "Placed 45th in the prestigious ICPC Asia Jakarta Regional Contest, solving 2 complex algorithmic challenges against top university teams across Asia-Pacific",
+      "type": "competition",
+      "icon": "code-bracket",
+      "rank": "45th Place"
+    },
+    {
+      "year": 2025,
+      "title": "Honorable Mention (55th) ICPC Indonesia National Contest",
+      "organization": "Bina Nusantara University",
+      "description": "Secured 55th position at the ICPC Indonesia National Contest, successfully solving 5 advanced programming problems in a highly competitive field",
+      "type": "competition",
+      "icon": "code-bracket",
+      "rank": "55th Place"
+    },
+    {
+      "year": 2025,
+      "title": "Silver Medal - KMIPN Hackathon Challenge",
+      "organization": "Padang State Polytechnic (National Polytechnic Competition)",
+      "description": "Won 2nd Place at the National Polytechnic Informatics Student Competition (KMIPN) Hackathon Challenge, leading the top-ranking first-year team",
+      "type": "competition",
+      "icon": "medal-silver",
+      "rank": "2nd Place"
+    },
+    {
+      "year": 2025,
+      "title": "Bronze Medal - Srifoton Competitive Programming",
+      "organization": "Srivijaya University",
+      "description": "Secured 3rd Place at Srifoton CP, one of Indonesia's most prestigious university-level competitive programming festivals",
+      "type": "competition",
+      "icon": "medal-bronze",
+      "rank": "3rd Place"
+    },
+    {
+      "year": 2025,
+      "title": "Finalist - Veternity Competitive Programming",
+      "organization": "Veteran National Development University Yogyakarta",
+      "description": "Qualified as a finalist in the Veternity Competitive Programming contest, competing against Indonesia's top programming talents",
+      "type": "competition",
+      "icon": "star",
+      "rank": "Finalist"
+    },
+    {
+      "year": 2025,
+      "title": "Finalist - IFest Competitive Programming",
+      "organization": "Padjajaran University",
+      "description": "Achieved finalist status at IFest CP hosted by Padjajaran University, one of Indonesia's leading institutions",
+      "type": "competition",
+      "icon": "star",
+      "rank": "Finalist"
+    },
+    {
+      "year": 2025,
+      "title": "Finalist - PingFest Competitive Programming",
+      "organization": "Sebelas Maret University",
+      "description": "Reached the finals of PingFest CP organized by Sebelas Maret University, showcasing consistent competitive programming excellence",
+      "type": "competition",
+      "icon": "star",
+      "rank": "Finalist"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "E-Commerce Platform",
+      "description": "Confidential high-scale application serving education sector with over 50,000+ active users",
+      "techStack": [
+        "Flutter",
+        "TypeScript",
+        "PostgreSQL",
+        "REST API"
+      ],
+      "features": [
+        "Clean Architecture",
+        "State Management",
+        "Performance Optimization"
+      ],
+      "category": "Mobile & Web",
+      "image": "/assets/projects/placeholder-1.png",
+      "nda": true
+    },
+    {
+      "id": 2,
+      "title": "B2B Services Platform",
+      "description": "Enterprise-grade application with complex workflows and real-time synchronization",
+      "techStack": [
+        "Flutter",
+        "Go",
+        "MongoDB",
+        "GraphQL"
+      ],
+      "features": [
+        "Microservices Architecture",
+        "Real-time Updates",
+        "Security Hardening"
+      ],
+      "category": "Enterprise",
+      "image": "/assets/projects/placeholder-2.png",
+      "nda": true
+    },
+    {
+      "id": 3,
+      "title": "Education Management System",
+      "description": "Comprehensive platform for academic institution management and student engagement",
+      "techStack": [
+        "Flutter",
+        "TypeScript",
+        "Firebase",
+        "REST API"
+      ],
+      "features": [
+        "Role-based Access Control",
+        "Analytics Dashboard",
+        "Mobile-first Design"
+      ],
+      "category": "Education",
+      "image": "/assets/projects/placeholder-3.png",
+      "nda": true
+    }
+  ],
+  "organizations": [
+    {
+      "title": "Member",
+      "organization": "English Club High School 3 Pangkalpinang",
+      "period": "2024 – 2024",
+      "location": "Pangkalpinang, Indonesia",
+      "current": false,
+      "responsibilities": [
+        "Participated in weekly English club meetings and discussion groups",
+        "Assisted in organizing language practice sessions and small events",
+        "Contributed to preparation of presentations and club activities to improve public speaking skills"
+      ],
+      "logo": "/assets/orgs/english-club-hs3.png"
+    }
+  ],
+  "assignments": [
+    {
+      "id": 1,
+      "title": "Personal Portfolio Website",
+      "type": "website",
+      "description": "Interactive portfolio built with Nuxt 3, TypeScript, and Tailwind CSS featuring 3D animations and modern UI/UX design",
+      "objectives": [
+        "Meet Assignment 1 requirements with Vue/Nuxt, TypeScript, Tailwind CSS",
+        "Create reusable template for other students",
+        "Showcase all assignments in one place",
+        "Demonstrate advanced front-end development skills"
+      ],
+      "results": [
+        "Deployed on Cloudflare Pages with 90+ Lighthouse score",
+        "Open source template available on GitHub",
+        "JSON-configurable for easy customization",
+        "Premium UI with 3D WebGL elements and animations"
+      ],
+      "technologies": [
+        "Nuxt 3",
+        "TypeScript",
+        "Tailwind CSS",
+        "GSAP",
+        "Three.js"
+      ],
+      "liveUrl": "https://kardian.my.id",
+      "githubUrl": "https://github.com/symful/template-portfolio",
+      "thumbnail": "/assets/assignments/assignment-1.png"
+    },
+    {
+      "id": 2,
+      "title": "TOR Kegiatan LKMM-TH",
+      "type": "pdf",
+      "file": "/assets/assignments/assignment-2-tor.pdf",
+      "description": "Comprehensive Terms of Reference document for redesigning the LKMM-TH event with innovative concept and budget optimization",
+      "objectives": [
+        "Design innovative LKMM-TH concept to replace ineffective two-day format",
+        "Optimize budget within Rp800,000 constraint",
+        "Ensure continuous learning and better mentorship",
+        "Create realistic and implementable event plan"
+      ],
+      "results": [
+        "Condensed event format with improved continuity",
+        "Budget-optimized event plan under Rp800,000",
+        "Innovative activities promoting leadership skills",
+        "Comprehensive TOR following formal Indonesian standards"
+      ],
+      "thumbnail": "/assets/assignments/assignment-2.png"
+    },
+    {
+      "id": 3,
+      "title": "Infografis Teknologi & Karier",
+      "type": "image",
+      "file": "/assets/assignments/assignment-3-infographic.png",
+      "description": "A3-sized infographic exploring career opportunities in technology sector with statistical data and visual storytelling",
+      "objectives": [
+        "Create informative and engaging A3 infographic on Career theme",
+        "Present credible statistical data about tech industry",
+        "Demonstrate visual design and data visualization skills",
+        "Communicate complex information clearly and attractively"
+      ],
+      "results": [
+        "High-quality A3 infographic with professional design",
+        "Data-driven insights from credible sources (LinkedIn, BPS, etc.)",
+        "Engaging visual hierarchy and color scheme",
+        "Clear information delivery with balanced text and graphics"
+      ],
+      "theme": "Karier",
+      "thumbnail": "/assets/assignments/assignment-3.png"
+    },
+    {
+      "id": 4,
+      "title": "Video Solusi Strategis HCW & Fun Rutin",
+      "type": "video",
+      "file": "/assets/assignments/assignment-4-video.mp4",
+      "description": "Creative video presentation analyzing organizational challenges and proposing strategic solutions with direct narration",
+      "objectives": [
+        "Analyze HCW and Fun Rutin program challenges comprehensively",
+        "Propose strategic collaboration frameworks with UKM",
+        "Demonstrate problem-solving and negotiation skills",
+        "Showcase innovation and development vision for HIMAKOM"
+      ],
+      "results": [
+        "Comprehensive analysis of bureaucratic and management challenges",
+        "Creative solutions balancing stakeholder interests",
+        "Professional video editing with clear narration",
+        "Demonstrated leadership thinking and adaptability"
+      ],
+      "duration": "5:30",
+      "thumbnail": "/assets/assignments/assignment-4.png"
+    }
+  ],
+  "theme": {
+    "colors": {
+      "primary": "#10b981",
+      "secondary": "#059669",
+      "accent": "#6ee7b7",
+      "background": {
+        "primary": "#0a0a0a",
+        "secondary": "#171717",
+        "tertiary": "#262626"
+      },
+      "text": {
+        "primary": "#f5f5f5",
+        "secondary": "#a3a3a3",
+        "muted": "#737373"
+      },
+      "border": "#404040",
+      "success": "#22c55e",
+      "warning": "#f59e0b",
+      "error": "#ef4444"
+    },
+    "fonts": {
+      "sans": "Inter",
+      "mono": "JetBrains Mono",
+      "display": "Inter"
+    },
+    "animations": {
+      "enableParticles": true,
+      "enable3D": true,
+      "particleCount": 6000,
+      "enableScrollAnimations": true,
+      "enableMicroInteractions": true,
+      "reducedMotion": false
+    },
+    "layout": {
+      "maxWidth": "1280px",
+      "containerPadding": "1.5rem",
+      "sectionSpacing": "6rem"
+    },
+    "effects": {
+      "glassmorphism": {
+        "enabled": true,
+        "blur": "16px",
+        "opacity": 0.05
+      },
+      "glow": {
+        "enabled": true,
+        "color": "#10b981",
+        "intensity": "strong"
+      }
+    }
+  }
+}

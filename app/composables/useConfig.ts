@@ -14,40 +14,22 @@ export const useConfig = () => {
 
   const loadConfig = async () => {
     if (!profile.value) {
-      const [
-        profileData,
-        educationData,
-        languagesData,
-        skillsData,
-        experienceData,
-        achievementsData,
-        projectsData,
-        organizationsData,
-        assignmentsData,
-        themeData
-      ] = await Promise.all([
-        $fetch<Profile>('/config/profile.json'),
-        $fetch<Education[]>('/config/education.json'),
-        $fetch<Language[]>('/config/languages.json'),
-        $fetch<Skills>('/config/skills.json'),
-        $fetch<Experience[]>('/config/experience.json'),
-        $fetch<Achievement[]>('/config/achievements.json'),
-        $fetch<Project[]>('/config/projects.json'),
-        $fetch<Organization[]>('/config/organizations.json'),
-        $fetch<Assignment[]>('/config/assignments.json'),
-        $fetch<Theme>('/config/theme.json')
-      ])
+      try {
+        const portfolioData = await $fetch<any>('/config/portfolio.json')
 
-      profile.value = profileData
-      education.value = educationData
-      languages.value = languagesData
-      skills.value = skillsData
-      experience.value = experienceData
-      achievements.value = achievementsData
-      projects.value = projectsData
-      organizations.value = organizationsData
-      assignments.value = assignmentsData
-      theme.value = themeData
+        profile.value = portfolioData.profile
+        education.value = portfolioData.education || []
+        languages.value = portfolioData.languages || []
+        skills.value = portfolioData.skills || {}
+        experience.value = portfolioData.experience || []
+        achievements.value = portfolioData.achievements || []
+        projects.value = portfolioData.projects || []
+        organizations.value = portfolioData.organizations || []
+        assignments.value = portfolioData.assignments || []
+        theme.value = portfolioData.theme
+      } catch (error) {
+        console.error('Failed to load portfolio configuration:', error)
+      }
     }
 
     return {

@@ -1,3 +1,5 @@
+import config from './public/config/portfolio.json'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
@@ -25,27 +27,27 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "Kemal Ardian | Full-Stack Software Engineer",
+      title: `${config.profile.name} | ${config.profile.tagline}`,
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         {
           name: "description",
-          content:
-            "Full-Stack Software Engineer specializing in Flutter, TypeScript, and Go. Portfolio showcasing competitive programming achievements and high-scale applications.",
+          content: config.profile.bio,
         },
+        { name: "theme-color", content: "#0a0a0a" },
         { name: "format-detection", content: "telephone=no" },
         // Open Graph
         { property: "og:type", content: "website" },
         {
           property: "og:title",
-          content: "Kemal Ardian | Full-Stack Software Engineer",
+          content: `${config.profile.name} | ${config.profile.tagline}`,
         },
         {
           property: "og:description",
-          content: "Full-Stack Software Engineer Portfolio",
+          content: config.profile.bio,
         },
-        { property: "og:image", content: "/assets/avatar.png" },
+        { property: "og:image", content: config.profile.avatar },
       ],
       link: [
         { rel: "icon", type: "image/png", href: "/assets/avatar.png" },

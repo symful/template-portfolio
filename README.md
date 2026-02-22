@@ -1,6 +1,6 @@
-# Kemal Ardian - Portfolio Website
+# Terminal Portfolio
 
-> **State-of-the-art personal portfolio** showcasing full-stack expertise with 3D animations, interactive elements, and modern design.
+> **A state-of-the-art developer portfolio** built with Nuxt 3 and Tailwind CSS. Showcases full-stack expertise using a highly customizable, purely JSON-driven dark terminal aesthetic.
 
 ## 🚀 Quick Start
 
@@ -27,35 +27,26 @@ npm run preview
 - [Customization Guide](#-customization-guide)
 - [Components](#-components)
 - [Deployment](#-deployment)
-- [Troubleshooting](#-troubleshooting)
+- [License](#-license)
 
 ---
 
 ## ✨ Features
 
-### Interactive 3D Graphics
-- **Particle Background** - 3,000 interactive particles (Three.js) that follow mouse movement
-- **60fps Performance** - Optimized rendering with mobile support (reduces to 1,500 particles)
-
-### Advanced Animations
-- **GSAP Scroll Animations** - Smooth reveal effects triggered by scroll position
-- **Card Stagger Effects** - Sequential animations with 80ms delay
-- **Heading Reveals** - Automatic fade-in for all section headings
+### Content Management
+- **Single Source of Truth** - All content managed via one `portfolio.json` file (no hardcoding).
+- **Type Safety** - Full TypeScript types for the configuration framework.
+- **Dynamic Pages** - Portfolio and Assignment details generated entirely on-the-fly from config.
 
 ### Professional Design
-- **Emerald Green Theme** - Distinctive color palette (not generic AI blue/purple)
-- **Glassmorphism** - Frosted glass effects with backdrop blur
-- **Micro-interactions** - Hover effects, scale transforms, smooth transitions
+- **Terminal Aesthetic** - Dark theme (`#1A1A1A`), monospace fonts, and CLI command headers.
+- **Glassmorphism Accents** - Subtle frosted text effects with backdrop blur.
+- **Micro-interactions** - Hover effects, scale transforms, smooth UI transitions.
 
 ### Icon System
-- **45+ Heroicons** - Complete SVG icon library for UI elements
-- **100+ Tech Logos** - Actual technology logos via Iconify (Flutter, TypeScript, etc.)
-- **Zero Emojis** - Professional iconography throughout
-
-### Content Management
-- **JSON Configuration** - All content managed via JSON files (no hardcoding)
-- **Type Safety** - Full TypeScript types for all config files
-- **Dynamic Pages** - Assignment details generated from config
+- **45+ Heroicons** - Complete SVG icon library for UI elements.
+- **100+ Tech Logos** - Actual technology logos via Iconify (Flutter, TypeScript, Go, etc.).
+- **Zero Emojis** - Professional iconography throughout the terminal design.
 
 ---
 
@@ -66,10 +57,8 @@ npm run preview
 | **Framework** | Nuxt 3 (Vue 3 with SSR) |
 | **Language** | TypeScript |
 | **Styling** | Tailwind CSS |
-| **3D Graphics** | Three.js |
-| **Animations** | GSAP (GreenSock) |
 | **Icons** | Heroicons + Iconify |
-| **Deployment** | Cloudflare Pages |
+| **Deployment** | Cloudflare Pages / Vercel |
 
 ---
 
@@ -82,173 +71,81 @@ Portfolio/
 │   │   └── css/
 │   │       └── main.css         # Global styles
 │   ├── components/
-│   │   ├── Navigation.vue       # Main navigation bar
-│   │   ├── ParticleBackground.vue  # 3D particle system
+│   │   ├── Navigation.vue       # Main navigation bar (Terminal Header)
 │   │   └── UI/
-│   │       ├── Icon.vue         # Heroicons wrapper (45+ icons)
-│   │       └── TechIcon.vue     # Iconify tech logos (100+)
+│   │       ├── Icon.vue         # Heroicons wrapper
+│   │       └── TechIcon.vue     # Iconify tech logos
 │   ├── composables/
-│   │   ├── useConfig.ts         # JSON config loader
-│   │   └── useScrollAnimations.ts  # GSAP animations
+│   │   └── useConfig.ts         # JSON config loader
 │   ├── layouts/
 │   │   └── default.vue          # Default layout with navigation
 │   ├── pages/
-│   │   ├── index.vue            # Homepage (hero + 3D particles)
-│   │   ├── profile.vue          # About/education/experience
-│   │   ├── skills.vue           # Tech stack with logos
-│   │   ├── achievements.vue     # Awards and competitions
+│   │   ├── index.vue            # Homepage (Terminal Hero)
+│   │   ├── about.vue            # Consolidated skills, experience, and profile
 │   │   ├── portfolio.vue        # Projects showcase
-│   │   ├── organizations.vue    # Organizational experience
-│   │   ├── contact.vue          # Contact form
-│   │   ├── assignments.vue      # All assignments list
+│   │   ├── contact.vue          # Contact form & socials
 │   │   └── assignments/
-│   │       └── [id].vue         # Individual assignment detail
+│   │       ├── index.vue        # List of all assignments
+│   │       └── [id].vue         # Individual assignment detail (Dynamic)
 │   └── types/
 │       └── config.ts            # TypeScript definitions
 │
 ├── public/
+│   ├── grid.svg                 # Background grid pattern
+│   ├── favicon.ico              # Site favicon
 │   ├── assets/
-│   │   └── avatar.png           # Profile avatar
-│   └── config/                  # 📝 EDIT THESE FOR CUSTOMIZATION
-│       ├── profile.json         # Personal info, bio, contact
-│       ├── skills.json          # Languages, frameworks, concepts
-│       ├── achievements.json    # Awards and competitions
-│       ├── projects.json        # Portfolio projects
-│       ├── education.json       # Educational background
-│       ├── experience.json      # Work experience
-│       ├── organizations.json   # Organizational involvement
-│       ├── assignments.json     # Assignment metadata
-│       └── theme.json           # Color scheme configuration
+│   │   ├── avatar.png           # Profile avatar
+│   │   ├── assignments/         # Assignment media
+│   │   │   ├── assignment-1.png
+│   │   │   ├── assignment-2-tor.pdf
+│   │   │   ├── assignment-2.png
+│   │   │   ├── assignment-3-infographic.png
+│   │   │   ├── assignment-3.png
+│   │   │   ├── assignment-4-video.mp4
+│   │   │   └── assignment-4.png
+│   │   ├── projects/            # Project thumbnails
+│   │   │   ├── placeholder-1.png
+│   │   │   ├── placeholder-2.png
+│   │   │   └── placeholder-3.png
+│   │   └── orgs/                # Organization logos
+│   │       └── english-club-hs3.png
+│   └── config/                  
+│       └── portfolio.json       # 📝 MASTER DATA REGISTRY: EDIT THIS ONLY
 │
 ├── nuxt.config.ts               # Nuxt configuration
 ├── tailwind.config.ts           # Tailwind + theme config
-├── package.json                 # Dependencies
-└── README.md                    # This file
+└── package.json                 # Dependencies
 ```
 
 ---
 
 ## ⚙️ Configuration
 
-### Core Configuration Files
+### Master Configuration File
 
-All content is managed through JSON files in `public/config/`. No code editing required!
-
-#### 1. **profile.json** - Personal Information
+**All site content** is managed through a single JSON file located at `public/config/portfolio.json`. You do not need to edit any Vue or HTML files to update your name, projects, or theme.
 
 ```json
 {
-  "name": "Your Name",
-  "title": "Your Title",
-  "tagline": "Your Tagline",
-  "bio": "Your bio...",
-  "avatar": "/assets/avatar.png",
-  "contact": {
-    "email": "you@example.com",
-    "phone": "+123456789",
-    "location": "City, Country",
-    "website": "yoursite.com"
+  "profile": {
+    "name": "Your Name",
+    "title": "Your Title",
+    "tagline": "Your Tagline",
+    "bio": "Your bio...",
+    "avatar": "/assets/avatar.png",
+    "contact": { ... }
   },
-  "socialLinks": [
-    { "platform": "GitHub", "url": "https://github.com/...", "icon": "github" },
-    { "platform": "LinkedIn", "url": "https://linkedin.com/...", "icon": "linkedin" }
-  ]
-}
-```
-
-#### 2. **skills.json** - Technical Skills
-
-```json
-{
-  "languages": [
-    { "name": "Dart", "proficiency": 95, "icon": "dart" },
-    { "name": "TypeScript", "proficiency": 90, "icon": "typescript" }
-  ],
-  "frameworks": [
-    { "name": "Flutter", "proficiency": 95, "icon": "flutter" }
-  ],
-  "concepts": [
-    { "name": "Clean Architecture", "proficiency": 90, "icon": "architecture" }
-  ]
-}
-```
-
-**Available Tech Icons** (100+ supported via Iconify):
-- **Languages**: Dart, TypeScript, JavaScript, Go, Python, Java, Kotlin, Swift, C++, C#, Rust, Ruby, PHP, SQL, HTML, CSS, WebAssembly, etc.
-- **Frameworks**: Flutter, React, Vue, Angular, Svelte, Next.js, Nuxt, Node.js, Deno, NestJS, Django, Laravel, Spring, etc.
-- **Databases**: Firebase, PostgreSQL, MySQL, MongoDB, Redis, SQLite, Supabase
-- **Cloud**: AWS, Google Cloud, Azure, Docker, Kubernetes, Terraform, Cloudflare, Vercel
-- **Tools**: Git, GitHub, GitLab, VS Code, Figma, Postman, Nginx
-
-See `app/components/UI/TechIcon.vue` for full list.
-
-#### 3. **achievements.json** - Awards
-
-```json
-[
-  {
-    "id": 1,
-    "title": "Award Title",
-    "organization": "Organization Name",
-    "year": "2024",
-    "rank": "1st Place",
-    "description": "Achievement description",
-    "icon": "trophy"
-  }
-]
-```
-
-**Available Achievement Icons**:
-- `trophy` - Gold trophy (1st place, championships)
-- `medal-silver` - Silver medal (2nd place)
-- `medal-bronze` - Bronze medal (3rd place)
-- `star` - Star (finalist, honorable mention)
-- `code-bracket` - Code bracket (coding competitions)
-- `academic-cap` - Academic cap (academic awards)
-
-#### 4. **projects.json** - Portfolio
-
-```json
-[
-  {
-    "id": 1,
-    "title": "Project Name",
-    "category": "Mobile App",
-    "description": "Project description...",
-    "techStack": ["Flutter", "Firebase", "Node.js"],
-    "features": ["Feature 1", "Feature 2"],
-    "nda": true
-  }
-]
-```
-
-#### 5. **theme.json** - Color Scheme
-
-```json
-{
-  "colors": {
-    "primary": "#10b981",      // Main brand color (emerald green)
-    "secondary": "#059669",    // Secondary accent
-    "accent": "#6ee7b7",       // Highlight color
-    "background": {
-      "primary": "#0a0a0a",    // True black background
-      "secondary": "#171717",  // Card backgrounds
-      "tertiary": "#262626"    // Hover states
-    },
-    "text": {
-      "primary": "#f5f5f5",    // Main text (off-white)
-      "secondary": "#a3a3a3",  // Secondary text (gray)
-      "muted": "#737373"       // Tertiary text (dark gray)
-    },
-    "border": "#404040",       // Border color
-    "success": "#22c55e",      // Success states
-    "warning": "#f59e0b",      // Warning states  
-    "error": "#ef4444"         // Error states
-  },
-  "effects": {
-    "glowIntensity": 0.5,
-    "blurAmount": 12,
-    "animationSpeed": 0.3
+  "skills": { ... },
+  "experience": [ ... ],
+  "achievements": [ ... ],
+  "projects": [ ... ],
+  "organizations": [ ... ],
+  "assignments": [ ... ],
+  "theme": {
+    "colors": {
+      "primary": "#10b981",
+      ...
+    }
   }
 }
 ```
@@ -259,9 +156,10 @@ See `app/components/UI/TechIcon.vue` for full list.
 
 ### Changing Theme Colors
 
-1. **Edit `public/config/theme.json`:**
+1. **Edit `public/config/portfolio.json`**:
+   Update the `"theme"` block at the bottom of the file with your desired hex colors:
    ```json
-   {
+   "theme": {
      "colors": {
        "primary": "#your-color",
        "secondary": "#your-color"
@@ -269,7 +167,8 @@ See `app/components/UI/TechIcon.vue` for full list.
    }
    ```
 
-2. **Update `tailwind.config.ts`** (lines 15-26):
+2. **Update `tailwind.config.ts`**:
+   To ensure Tailwind builds the CSS variables correctly, match your colors on lines 15-26 of `tailwind.config.ts`:
    ```typescript
    colors: {
      primary: '#your-color',
@@ -278,98 +177,38 @@ See `app/components/UI/TechIcon.vue` for full list.
    }
    ```
 
-3. **Update glow effects** in `tailwind.config.ts` (lines 54-57, 79-83) to match your primary color.
-
 ### Adding New Icons
 
 #### For UI Icons (Heroicons):
-1. Import icon in `app/components/UI/Icon.vue`
-2. Add to `iconMap` object
-3. Use with: `<UIIcon name="icon-name" size="md" />`
+1. Import the new icon in `app/components/UI/Icon.vue`.
+2. Add it to the `iconMap` object.
+3. Use it in the JSON config directly using its key name.
 
 #### For Tech Logos (Iconify):
-1. Find icon at [Iconify Icon Sets](https://icon-sets.iconify.design/)
-2. Add to `techIconMap` in `app/components/UI/TechIcon.vue`
-3. Use with: `<UITechIcon name="Flutter" :size="64" />`
-
-### Customizing Content
-
-**All content is in `public/config/*.json` files:**
-
-| File | Purpose | Update Frequency |
-|------|---------|------------------|
-| `profile.json` | Bio, contact info | Once (initial setup) |
-| `skills.json` | Tech stack | Quarterly (as you learn) |
-| `achievements.json` | Awards | When you win competitions |
-| `projects.json` | Portfolio items | Per project completion |
-| `experience.json` | Work history | When changing jobs |
-| `education.json` | Degrees | Rarely |
-| `assignments.json` | Assignment metadata | Per assignment |
-
-### Modifying Particle Effect
-
-Edit `app/components/ParticleBackground.vue`:
-
-```typescript
-// Particle count (line 33)
-const particleCount = window.innerWidth < 768 ? 1500 : 3000
-
-// Particle colors (lines 36-37)
-const color1 = new THREE.Color(0x10b981) // Your primary color
-const color2 = new THREE.Color(0x059669) // Your secondary color
-
-// Particle size (line 54)
-size: 0.5, // Adjust particle size
-
-// Rotation speed (lines 73-74)
-particles.rotation.x += 0.0002 // Adjust rotation speed
-particles.rotation.y += 0.0003
-```
+1. Find standard tech icons at [Iconify](https://icon-sets.iconify.design/).
+2. Add them to `techIconMap` in `app/components/UI/TechIcon.vue`.
+3. Use them in your `portfolio.json` skills tracking.
 
 ---
 
 ## 🧩 Components
 
-### ParticleBackground.vue
-3D particle system using Three.js.
-
-**Props:** None (auto-configures based on viewport)
-
-**Usage:**
-```vue
-<ParticleBackground />
-```
-
 ### Icon.vue
-Heroicons SVG wrapper with 45+ icons.
-
-**Props:**
-- `name` (string, required) - Icon identifier
-- `size` ('sm' | 'md' | 'lg' | 'xl' | '2xl') - Icon size
-- `class` (string) - Additional CSS classes
-
+Heroicons SVG wrapper with 45+ icons used as UI decorators.
 **Usage:**
 ```vue
 <UIIcon name="trophy" size="lg" class="text-primary" />
 ```
 
 ### TechIcon.vue
-Iconify technology logos with 100+ tech icons.
-
-**Props:**
-- `name` (string, required) - Technology name
-- `size` (number, default: 48) - Icon size in pixels
-- `class` (string) - Additional CSS classes
-
+Iconify technology logos with 100+ tech language variants.
 **Usage:**
 ```vue
 <UITechIcon name="Flutter" :size="64" class="mx-auto" />
 ```
 
 ### Navigation.vue
-Main navigation bar with responsive mobile menu.
-
-**Auto-imported** - No manual import needed.
+Auto-imported terminal styling block. Generates dynamic "directories" based on the Nuxt routing links.
 
 ---
 
@@ -383,114 +222,30 @@ Main navigation bar with responsive mobile menu.
    - Select your repository
 
 2. **Build Configuration:**
-   ```
+   ```bash
    Build command: npm run build
    Build output: dist
    Node version: 18 or higher
    ```
 
-3. **Environment Variables:** None required
+3. **Environment Variables:** None required.
 
-4. **Custom Domain:** Add in Cloudflare Pages settings
+### Alternative Deployments
 
-### Alternative: Vercel
-
+**Vercel**
 ```bash
 npx vercel --prod
 ```
 
-### Alternative: Netlify
-
+**Netlify**
 ```bash
 npx netlify deploy --prod
 ```
 
 ---
 
-## 🐛 Troubleshooting
-
-### Icons Not Showing
-
-**Problem:** UIIcon or UITechIcon components not rendering.
-
-**Solutions:**
-1. Restart dev server after adding new icons
-2. Check `nuxt.config.ts` has UI components path configured
-3. Verify icon name matches `iconMap` in Icon.vue or TechIcon.vue
-
-```bash
-# Restart dev server
-Ctrl+C
-npm run dev
-```
-
-### 3D Particles Not Rendering
-
-**Problem:** Particle background is blank or not visible.
-
-**Solutions:**
-1. Check browser console for Three.js errors
-2. Ensure WebGL is supported: Visit [WebGL Test](https://get.webgl.org/)
-3. Verify `ClientOnly` wrapper is present in ParticleBackground.vue
-4. Check z-index is set correctly (should be 0 or negative)
-
-### Animations Hiding Content
-
-**Problem:** GSAP animations make content invisible.
-
-**Solutions:**
-1. Verify `autoAlpha` is used instead of `opacity` in useScrollAnimations.ts
-2. Check initial states don't set opacity to 0
-3. Disable animations temporarily to debug
-
-### Build Errors
-
-**Problem:** `npm run build` fails.
-
-**Common Fixes:**
-```bash
-# Clear cache and reinstall
-rm -rf node_modules .nuxt
-npm install
-
-# Type check
-npm run typecheck
-
-# Build with verbose output
-npm run build -- --verbose
-```
-
-### Performance Issues
-
-**Problem:** Animations are laggy or stuttering.
-
-**Solutions:**
-1. Reduce particle count in ParticleBackground.vue (line 33)
-2. Disable GSAP animations on older devices
-3. Check Chrome DevTools Performance tab
-
-```typescript
-// Reduce particles for all devices
-const particleCount = 1000 // Instead of 3000
-```
-
----
-
 ## 📝 License
 
-This portfolio is a personal project. Feel free to use as a template but please customize with your own content and branding.
+This portfolio is offered as an open-source template. Feel free to clone, edit, or customize entirely with your own branding.
 
----
-
-## 🙏 Credits
-
-- **Heroicons** - MIT License - [https://heroicons.com/](https://heroicons.com/)
-- **Iconify** - Multiple licenses - [https://iconify.design/](https://iconify.design/)
-- **Three.js** - MIT License - [https://threejs.org/](https://threejs.org/)
-- **GSAP** - Standard License - [https://greensock.com/](https://greensock.com/)
-- **Tailwind CSS** - MIT License - [https://tailwindcss.com/](https://tailwindcss.com/)
-
----
-
-
-Made with ❤️ by Kemal Ardian
+Made with ❤️

@@ -1,11 +1,11 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 z-50 glass backdrop-blur-lg border-b border-white/10">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-[#1A1A1A]/95 backdrop-blur-md border-b border-[#333333] font-mono">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <!-- Logo -->
         <NuxtLink to="/" class="flex items-center group">
           <span class="text-text-primary font-bold text-xl group-hover:text-primary transition-colors">
-            Kemal Ardian
+            ~/{{ ((profile?.name || 'Portfolio').split(' ')[0] || 'portfolio').toLowerCase() }}
           </span>
         </NuxtLink>
 
@@ -15,11 +15,11 @@
             v-for="link in navLinks"
             :key="link.path"
             :to="link.path"
-            class="px-4 py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-white/5 transition-all relative group"
-            active-class="text-primary bg-white/10"
+            class="px-4 py-2 text-text-secondary hover:text-primary transition-all relative group text-sm"
+            active-class="text-primary font-bold"
           >
-            {{ link.name }}
-            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300" />
+            <span class="mr-1 opacity-50">$</span>{{ link.name.toLowerCase() }}
+            <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-primary group-hover:w-full transition-all duration-300" />
           </NuxtLink>
         </div>
 
@@ -73,17 +73,16 @@ const mobileMenuOpen = ref(false)
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Profile', path: '/profile' },
-  { name: 'Skills', path: '/skills' },
-  { name: 'Achievements', path: '/achievements' },
-  { name: 'Assignments', path: '/assignments' },
+  { name: 'About', path: '/about' },
   { name: 'Portfolio', path: '/portfolio' },
-  { name: 'Organizations', path: '/organizations' },
+  { name: 'Assignments', path: '/assignments' },
   { name: 'Contact', path: '/contact' },
 ]
 
 // Close mobile menu on route change
 const route = useRoute()
+const { profile } = useConfig()
+
 watch(() => route.path, () => {
   mobileMenuOpen.value = false
 })
