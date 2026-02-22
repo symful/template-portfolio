@@ -78,8 +78,8 @@
                   <textarea id="message" v-model="form.message" required rows="4" class="w-full px-3 py-2 font-mono bg-black border border-border rounded text-text-primary focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-colors resize-none"></textarea>
                 </div>
                 
-                <button type="submit" :disabled="isSubmitting" class="w-full sm:w-auto px-6 py-2 font-mono text-bg-secondary font-bold bg-primary hover:bg-success rounded transition-colors disabled:opacity-50">
-                  {{ isSubmitting ? 'Sending...' : 'EXECUTE' }}
+                <button type="submit" class="w-full sm:w-auto px-6 py-2 font-mono text-bg-secondary font-bold bg-primary hover:bg-success rounded transition-colors">
+                  EXECUTE
                 </button>
                 
                 <!-- Success Message -->
@@ -112,23 +112,23 @@ const form = ref({
   message: ''
 })
 
-const isSubmitting = ref(false)
 const submitted = ref(false)
 
-const handleSubmit = async () => {
-  isSubmitting.value = true
+const handleSubmit = () => {
+  if (!profile.value?.contact?.email) return
   
-  // Simulate form submission
-  await new Promise(resolve => setTimeout(resolve, 1500))
+  const subject = encodeURIComponent(`Portfolio Contact from ${form.value.name}`)
+  const body = encodeURIComponent(`Name: ${form.value.name}\nEmail: ${form.value.email}\n\nMessage:\n${form.value.message}`)
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${profile.value.contact.email}&su=${subject}&body=${body}`
   
+  window.open(gmailUrl, '_blank')
+  
+  form.value = { name: '', email: '', subject: '', message: '' }
   submitted.value = true
-  isSubmitting.value = false
   
-  // Reset form
   setTimeout(() => {
-    form.value = { name: '', email: '', subject: '', message: '' }
     submitted.value = false
-  }, 3000)
+  }, 4000)
 }
 
 useHead({
