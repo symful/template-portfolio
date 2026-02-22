@@ -1,193 +1,153 @@
 <template>
-  <div class="min-h-screen bg-[#1A1A1A] text-white overflow-x-hidden font-sans">
-    
-    <!-- Hero Section -->
-    <section v-if="profile" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-10"></div>
+  <div class="min-h-screen bg-[#1A1A1A] text-white pt-24 pb-12 font-sans overflow-hidden">
+    <!-- Background Elements -->
+    <div class="fixed inset-0 bg-gradient-to-br from-[#1A1A1A] via-[#111111] to-[#0A0A0A] -z-20"></div>
+    <div class="fixed inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] opacity-20 -z-10"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
-      <!-- Subtle Grid Background -->
-      <div class="absolute inset-0">
-        <div class="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-      </div>
-      
-      <div class="relative z-10 max-w-4xl w-full mx-4 mt-16 md:mt-0">
-        <div class="bg-black/50 backdrop-blur-lg rounded-lg border border-border p-6 animate-slide-up">
-          
-          <!-- Terminal Window Header -->
-          <div class="flex items-center gap-2 mb-4">
+      <!-- Terminal Window -->
+      <div v-if="profile" class="bg-black/80 backdrop-blur-xl border border-border rounded-lg overflow-hidden shadow-2xl mb-8 animate-slide-up">
+        
+        <!-- Terminal Header -->
+        <div class="bg-bg-secondary border-b border-border px-4 py-3 flex items-center justify-between">
+          <div class="flex items-center space-x-2">
             <div class="w-3 h-3 rounded-full bg-error"></div>
             <div class="w-3 h-3 rounded-full bg-warning"></div>
             <div class="w-3 h-3 rounded-full bg-success"></div>
           </div>
+          <div class="text-text-muted text-xs font-mono">user@portfolio: ~/home</div>
+          <div class="w-16"></div> <!-- Spacer for centering -->
+        </div>
+
+        <!-- Terminal Content -->
+        <div class="p-6 md:p-8 font-mono text-sm md:text-base space-y-8">
           
-          <!-- Terminal Content -->
-          <div class="font-mono">
-            <p class="text-primary">$ whoami</p>
-            <h1 class="text-4xl md:text-5xl font-bold mt-2 mb-4 text-text-primary">{{ profile.name }}</h1>
-            <p class="text-text-secondary mb-2">{{ profile.title }} - {{ profile.tagline }}</p>
-            <p class="text-primary mt-6 mb-2">$ cat bio.txt</p>
-            <p class="text-text-muted text-sm md:text-base mb-6 leading-relaxed">{{ profile.bio }}</p>
-            
-            <p class="text-primary">$ skills</p>
-            <div v-if="skills" class="flex flex-wrap gap-2 mt-2">
-              <span 
-                v-for="lang in skills.languages.slice(0, 8)" 
-                :key="lang.name"
-                class="px-3 py-1 bg-primary/10 rounded-md border border-primary/20 text-text-primary text-sm"
-              >
-                {{ lang.name }}
-              </span>
-              <span 
-                v-for="framework in skills.frameworks.slice(0, 6)" 
-                :key="framework.name"
-                class="px-3 py-1 bg-secondary/10 rounded-md border border-secondary/20 text-text-primary text-sm"
-              >
-                {{ framework.name }}
-              </span>
+          <!-- Command: whoami -->
+          <div>
+            <div class="flex items-center text-primary mb-2">
+              <span class="mr-2">user@portfolio:~$</span>
+              <span class="text-white">whoami</span>
+            </div>
+            <div class="pl-4 border-l-2 border-border/50 text-text-secondary">
+              <h1 class="text-3xl md:text-4xl font-bold text-text-primary mb-2">{{ profile.name }}</h1>
+              <p class="text-primary">{{ profile.title }}</p>
+              <p class="mt-2">{{ profile.tagline }}</p>
             </div>
           </div>
-          
-        </div>
-      </div>
-    </section>
 
-    <!-- System Architecture & Projects Section -->
-    <section v-if="projects && projects.length" class="py-20 px-4">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center text-text-primary">System Architecture & Projects</h2>
-        <div class="grid grid-cols-1 gap-8">
-          
-          <div 
-            v-for="project in projects" 
-            :key="project.id"
-            class="bg-bg-secondary/50 rounded-xl p-6 backdrop-blur-sm border border-border animate-slide-up hover:border-primary/50 transition-colors"
-          >
-            <div class="flex justify-between items-start mb-4">
-              <h3 class="text-2xl font-bold text-text-primary">{{ project.title }}</h3>
-              <span class="text-xs px-2 py-1 bg-accent/20 text-accent rounded whitespace-nowrap">{{ project.category }}</span>
+          <!-- Command: cat bio.txt -->
+          <div>
+            <div class="flex items-center text-primary mb-2">
+              <span class="mr-2">user@portfolio:~$</span>
+              <span class="text-white">cat bio.txt</span>
             </div>
-            
-            <p class="text-text-secondary mb-6">{{ project.description }}</p>
-            
-            <div class="mb-6">
-              <h4 class="text-lg font-semibold mb-2 text-text-primary">Key Features:</h4>
-              <ul class="list-disc list-inside space-y-2 text-text-secondary">
-                <li v-for="feature in project.features" :key="feature">{{ feature }}</li>
-              </ul>
-            </div>
-            
-            <div class="flex flex-wrap gap-2">
-              <span 
-                v-for="tech in project.techStack" 
-                :key="tech"
-                class="text-sm px-3 py-1 bg-secondary/10 rounded-full border border-secondary/20 text-text-primary"
-              >
-                {{ tech }}
-              </span>
+            <div class="pl-4 border-l-2 border-border/50 text-text-secondary mt-2">
+              <p class="leading-relaxed">{{ profile.bio }}</p>
             </div>
           </div>
-          
-        </div>
-      </div>
-    </section>
 
-    <!-- Impact & Achievements Section -->
-    <section v-if="achievements && achievements.length" class="py-20 px-4 bg-bg-tertiary">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl font-bold mb-12 text-center text-text-primary">Impact & Achievements</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div 
-            v-for="achievement in achievements" 
-            :key="achievement.title"
-            class="bg-bg-secondary/50 rounded-lg p-6 border border-border hover:border-primary/30 transition-all"
-          >
-            <div class="flex justify-between items-center mb-4">
-              <h4 class="text-lg font-semibold text-text-primary">{{ achievement.title }}</h4>
-              <UIIcon :name="achievement.icon" size="sm" class="text-primary" />
+          <!-- Command: ls ./projects/top -->
+          <div v-if="projects && projects.length">
+            <div class="flex items-center text-primary mb-2">
+              <span class="mr-2">user@portfolio:~$</span>
+              <span class="text-white">ls ./projects/top -l</span>
             </div>
-            <p class="text-sm text-primary mb-2 font-mono">{{ achievement.organization }} • {{ achievement.year }}</p>
-            <ul class="mt-2 space-y-2 text-text-secondary text-sm">
-              <li>• {{ achievement.rank }}</li>
-              <li>• {{ achievement.description }}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Let's Connect (Terminal) Section -->
-    <section v-if="profile" class="py-20 px-4">
-      <div class="max-w-4xl mx-auto">
-        <div class="relative p-8 rounded-2xl overflow-hidden backdrop-blur-lg border border-border bg-bg-secondary/50">
-          <div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
-          
-          <div class="relative z-10">
-            <!-- Terminal Header -->
-            <div class="flex items-center gap-2 mb-6">
-              <div class="w-3 h-3 rounded-full bg-error"></div>
-              <div class="w-3 h-3 rounded-full bg-warning"></div>
-              <div class="w-3 h-3 rounded-full bg-success"></div>
-            </div>
-            
-            <div class="font-mono">
-              <p class="text-primary mb-2">$ contact --info</p>
-              <h2 class="text-3xl font-bold mb-8 text-text-primary">Let's Connect</h2>
-              
-              <p class="text-primary mb-2">$ location --current</p>
-              <div class="flex items-center gap-2 text-text-secondary mb-8">
-                <UIIcon name="map-pin" size="sm" class="text-primary" />
-                <span>{{ profile.contact.location }}</span>
-              </div>
-              
-              <p class="text-primary mb-2">$ contact --email</p>
-              <a :href="`mailto:${profile.contact.email}`" class="inline-block px-6 py-3 bg-primary/10 text-primary rounded-lg border border-primary/20 hover:bg-primary/20 transition-colors mb-8">
-                {{ profile.contact.email }}
-              </a>
-              
-              <p class="text-primary mb-4">$ ls ./social-links</p>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-                <a 
-                  v-for="social in profile.socialLinks" 
-                  :key="social.platform"
-                  :href="social.url" 
-                  target="_blank"
-                  class="flex items-center gap-3 px-4 py-3 bg-bg-tertiary rounded-lg hover:bg-border transition-colors border border-border group"
-                >
-                  <div class="p-2 bg-border rounded-lg group-hover:bg-bg-secondary transition-colors text-primary">
-                    <UIIcon :name="social.icon === 'github' ? 'code-bracket' : social.icon === 'linkedin' ? 'briefcase' : social.icon === 'globe' ? 'globe-alt' : 'envelope'" size="sm" />
+            <div class="pl-4 border-l-2 border-border/50 text-text-secondary mt-4 space-y-6">
+              <div v-for="project in projects.slice(0, 2)" :key="project.id" class="bg-white/5 p-4 rounded border border-white/10 relative overflow-hidden group">
+                <div class="relative z-10">
+                  <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-lg font-bold text-text-primary">{{ project.title }}</h3>
+                    <span class="text-xs px-2 py-1 bg-accent/10 border border-accent/20 text-accent rounded whitespace-nowrap">{{ project.category }}</span>
                   </div>
-                  <div>
-                    <p class="font-semibold text-text-primary">{{ social.platform }}</p>
+                  <p class="text-sm mb-4">{{ project.description }}</p>
+                  
+                  <div class="mb-3 text-sm">
+                    <span class="text-primary mr-2">> features:</span>
+                    <ul class="inline-flex flex-wrap gap-x-4 gap-y-1 mt-1 ml-4 sm:ml-0">
+                      <li v-for="feature in project.features.slice(0, 3)" :key="feature" class="list-disc list-inside">{{ feature }}</li>
+                    </ul>
                   </div>
-                </a>
+
+                  <div class="flex flex-wrap gap-2 text-xs">
+                    <span class="text-secondary mr-2">> stack:</span>
+                    <span 
+                      v-for="tech in project.techStack.slice(0, 5)" 
+                      :key="tech"
+                      class="text-text-primary px-2 py-0.5 bg-black/30 rounded border border-white/10"
+                    >
+                      {{ tech }}
+                    </span>
+                  </div>
+                </div>
               </div>
-              
-              <p class="text-primary mb-4">$ send-message</p>
-              <form class="space-y-4" @submit.prevent="() => {}">
-                <div>
-                  <label for="name" class="block text-sm font-mono text-primary mb-2">$ name:</label>
-                  <input type="text" id="name" required class="w-full px-3 py-2 font-mono bg-black/20 border border-primary/20 rounded-md text-text-primary focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" />
-                </div>
-                <div>
-                  <label for="email" class="block text-sm font-mono text-primary mb-2">$ email:</label>
-                  <input type="email" id="email" required class="w-full px-3 py-2 font-mono bg-black/20 border border-primary/20 rounded-md text-text-primary focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" />
-                </div>
-                <div>
-                  <label for="message" class="block text-sm font-mono text-primary mb-2">$ message:</label>
-                  <textarea id="message" required rows="4" class="w-full px-3 py-2 font-mono bg-black/20 border border-primary/20 rounded-md text-text-primary focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors resize-none"></textarea>
-                </div>
-                <NuxtLink to="/contact" class="block text-center w-full px-6 py-3 font-mono text-bg-secondary font-bold bg-primary hover:bg-success rounded-lg transition-colors">
-                  SendMessage()
-                </NuxtLink>
-              </form>
+              <div class="text-primary text-sm mt-2">
+                 > View all projects in <NuxtLink to="/portfolio" class="underline hover:text-white transition-colors">~/portfolio</NuxtLink>
+              </div>
             </div>
-            
           </div>
+
+          <!-- Command: tail -n 3 achievements.log -->
+          <div v-if="achievements && achievements.length">
+            <div class="flex items-center text-primary mb-2">
+              <span class="mr-2">user@portfolio:~$</span>
+              <span class="text-white">tail -n 3 achievements.log</span>
+            </div>
+            <div class="pl-4 border-l-2 border-border/50 text-text-secondary mt-4 space-y-3">
+              <div v-for="achievement in achievements.slice(0, 3)" :key="achievement.title" class="flex items-start gap-3">
+                 <UIIcon :name="achievement.icon" size="sm" class="text-accent mt-0.5 shrink-0" />
+                 <div>
+                    <div class="text-text-primary font-bold">{{ achievement.title }}</div>
+                    <div class="text-xs text-text-muted">{{ achievement.organization }} <span class="text-secondary">({{ achievement.year }})</span></div>
+                 </div>
+              </div>
+              <div class="text-primary text-sm mt-4">
+                 > View full records in <NuxtLink to="/about" class="underline hover:text-white transition-colors">~/about</NuxtLink>
+              </div>
+            </div>
+          </div>
+
+          <!-- Command: contact --quick -->
+          <div>
+            <div class="flex items-center text-primary mb-2">
+              <span class="mr-2">user@portfolio:~$</span>
+              <span class="text-white">contact --quick</span>
+            </div>
+            <div class="pl-4 border-l-2 border-border/50 text-text-secondary mt-4">
+               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                 <a 
+                   href="/contact"
+                   class="flex items-center justify-center gap-2 px-4 py-3 bg-primary/10 text-primary rounded border border-primary/20 hover:bg-primary/20 transition-colors group"
+                 >
+                   <UIIcon name="envelope" size="sm" class="group-hover:scale-110 transition-transform" />
+                   <span>Direct Message</span>
+                 </a>
+                 <div class="flex items-center gap-3">
+                    <span class="text-text-muted">Links:</span>
+                    <a 
+                      v-for="social in profile.socialLinks.slice(0, 3)" 
+                      :key="social.platform"
+                      :href="social.url" 
+                      target="_blank"
+                      class="p-2 bg-white/5 rounded hover:bg-white/10 transition-colors text-text-primary"
+                      :title="social.platform"
+                    >
+                      <UIIcon :name="social.icon === 'github' ? 'code-bracket' : social.icon === 'linkedin' ? 'briefcase' : social.icon === 'globe' ? 'globe-alt' : 'link'" size="sm" />
+                    </a>
+                 </div>
+               </div>
+            </div>
+          </div>
+
+          <!-- Blinking Cursor -->
+          <div class="flex items-center text-primary mt-8">
+            <span class="mr-2">user@portfolio:~$</span>
+            <span class="w-2.5 h-5 bg-white/70 animate-pulse ml-1 inline-block"></span>
+          </div>
+
         </div>
       </div>
-    </section>
-
+    </div>
   </div>
 </template>
 
