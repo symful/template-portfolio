@@ -59,7 +59,7 @@
               </div>
 
               <!-- Links -->
-              <div class="mb-2">
+              <div class="mb-2" v-if="assignment.githubUrl || assignment.liveUrl">
                 <p class="text-primary mb-2">> ls -l ./links</p>
                 <div class="flex flex-wrap gap-4">
                   <a 
@@ -79,6 +79,51 @@
                   >
                     <UIIcon name="globe-alt" size="sm" />
                     <span>Live Demo</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Assignment File Viewer -->
+              <div class="mb-4 mt-8" v-if="assignment.file">
+                <p class="text-primary mb-4">> open {{ assignment.file.split('/').pop() }}</p>
+                <div class="rounded-lg overflow-hidden border border-border bg-bg-secondary relative">
+                  <!-- PDF -->
+                  <iframe 
+                    v-if="assignment.type === 'pdf'" 
+                    :src="assignment.file" 
+                    class="w-full h-[700px] border-none"
+                    title="Assignment PDF"
+                  ></iframe>
+                  <!-- Image -->
+                  <img 
+                    v-else-if="assignment.type === 'image'" 
+                    :src="assignment.file" 
+                    :alt="assignment.title"
+                    class="w-full h-auto object-contain max-h-[800px]"
+                  />
+                  <!-- Video -->
+                  <video 
+                    v-else-if="assignment.type === 'video'" 
+                    controls 
+                    class="w-full h-auto max-h-[800px]"
+                  >
+                    <source :src="assignment.file" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  <!-- Unsupported -->
+                  <div v-else class="py-12 px-6 flex flex-col items-center justify-center text-center">
+                    <UIIcon name="document" class="text-text-muted mb-3 h-12 w-12" />
+                    <p class="text-text-secondary">Preview is not available for this file type.</p>
+                  </div>
+                </div>
+                <div class="mt-4 flex justify-end">
+                  <a 
+                    :href="assignment.file" 
+                    target="_blank"
+                    download
+                    class="text-xs text-primary hover:text-white transition-colors flex items-center"
+                  >
+                    <span>Download file</span>
                   </a>
                 </div>
               </div>

@@ -27,10 +27,10 @@ PDF_OUT = "public/assets/assignments/assignment-2-tor.pdf"
 # ─── Paragraph replacements ──────────────────────────────────────────────────
 
 PARA_REPLACEMENTS = {
-    "Nama Kegiatan": "LKMM-TH 2025",
+    "Nama Kegiatan": "LKMM-TH 2026",
 
     "-Cantumkan nama kegiatan, tema, serta tagline kegiatan yang diusung jika ada-": (
-        "Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Himpunan (LKMM-TH) 2025.\n"
+        "Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Himpunan (LKMM-TH) 2026.\n"
         "Tema: \"Sinergi Kepemimpinan Adaptif di Era Digital\".\n"
         "Tagline: \"Dari Materi ke Aksi, Dalam Satu Hari\"."
     ),
@@ -59,7 +59,7 @@ PARA_REPLACEMENTS = {
         "3. Melatih kemampuan berpikir kritis dan presentasi melalui sidang mini."
     ),
 
-    "nama kegiatan": "LKMM-TH 2025",
+    "nama kegiatan": "LKMM-TH 2026",
 }
 
 
@@ -91,7 +91,7 @@ def set_cell(table, row, col, text):
 def fill_table_0_header(table):
     """Table 0: Nama Kegiatan, Pemateri, Jenis Kegiatan."""
     set_cell(table, 0, 0, "Nama Kegiatan")
-    set_cell(table, 0, 2, "LKMM-TH (Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Himpunan) 2025")
+    set_cell(table, 0, 2, "LKMM-TH (Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Himpunan) 2026")
     set_cell(table, 1, 2, "(Disesuaikan dengan pemateri yang ditunjuk oleh jurusan)")
     set_cell(table, 2, 2, "Pelatihan Kepemimpinan Tingkat Himpunan")
 
@@ -162,7 +162,7 @@ def fill_table_3_kepanitiaan(table):
 def fill_table_4_rab(table):
     """Table 4: RAB (21 rows, 10 cols). Fill header rows + Belanja Barang items."""
     # Row 1: Program Kerja name
-    set_cell(table, 1, 0, "Program Kerja LKMM-TH 2025")
+    set_cell(table, 1, 0, "Program Kerja LKMM-TH 2026")
     # Row 2: Nama Ormawa
     set_cell(table, 2, 0, "Himpunan Mahasiswa Komputer (HIMAKOM)")
     # Row 4: Tanggal

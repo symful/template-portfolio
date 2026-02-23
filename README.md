@@ -96,13 +96,9 @@ Portfolio/
 │   ├── assets/
 │   │   ├── avatar.png           # Profile avatar
 │   │   ├── assignments/         # Assignment media
-│   │   │   ├── assignment-1.png
 │   │   │   ├── assignment-2-tor.pdf
-│   │   │   ├── assignment-2.png
 │   │   │   ├── assignment-3-infographic.png
-│   │   │   ├── assignment-3.png
-│   │   │   ├── assignment-4-video.mp4
-│   │   │   └── assignment-4.png
+│   │   │   └── assignment-4-video.mp4
 │   │   ├── projects/            # Project thumbnails
 │   │   │   ├── placeholder-1.png
 │   │   │   ├── placeholder-2.png

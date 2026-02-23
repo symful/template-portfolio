@@ -76,7 +76,6 @@ export interface Project {
   techStack: string[];
   features: string[];
   category: string;
-  image: string;
   nda: boolean;
 }
 
@@ -101,7 +100,6 @@ export interface Assignment {
   liveUrl?: string;
   githubUrl?: string;
   file?: string;
-  thumbnail: string;
   theme?: string;
   duration?: string;
 }

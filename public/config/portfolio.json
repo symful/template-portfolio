@@ -265,7 +265,6 @@
         "Performance Optimization"
       ],
       "category": "Mobile & Web",
-      "image": "/assets/projects/placeholder-1.png",
       "nda": true
     },
     {
@@ -284,7 +283,6 @@
         "Security Hardening"
       ],
       "category": "Enterprise",
-      "image": "/assets/projects/placeholder-2.png",
       "nda": true
     },
     {
@@ -303,7 +301,6 @@
         "Mobile-first Design"
       ],
       "category": "Education",
-      "image": "/assets/projects/placeholder-3.png",
       "nda": true
     }
   ],
@@ -348,8 +345,7 @@
         "Three.js"
       ],
       "liveUrl": "https://kardian.my.id",
-      "githubUrl": "https://github.com/symful/template-portfolio",
-      "thumbnail": "/assets/assignments/assignment-1.png"
+      "githubUrl": "https://github.com/symful/template-portfolio"
     },
     {
       "id": 2,
@@ -368,8 +364,7 @@
         "Budget-optimized event plan under Rp800,000",
         "Innovative activities promoting leadership skills",
         "Comprehensive TOR following formal Indonesian standards"
-      ],
-      "thumbnail": "/assets/assignments/assignment-2.png"
+      ]
     },
     {
       "id": 3,
@@ -389,8 +384,7 @@
         "Engaging visual hierarchy and color scheme",
         "Clear information delivery with balanced text and graphics"
       ],
-      "theme": "Karier",
-      "thumbnail": "/assets/assignments/assignment-3.png"
+      "theme": "Karier"
     },
     {
       "id": 4,
@@ -410,8 +404,7 @@
         "Professional video editing with clear narration",
         "Demonstrated leadership thinking and adaptability"
       ],
-      "duration": "5:30",
-      "thumbnail": "/assets/assignments/assignment-4.png"
+      "duration": "5:30"
     }
   ],
   "theme": {
