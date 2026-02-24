@@ -1,4 +1,4 @@
-import config from './public/config/portfolio.json'
+import config from "./public/config/portfolio.json" with { type: "json" };
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
