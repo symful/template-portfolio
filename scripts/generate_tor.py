@@ -16,25 +16,22 @@ Output: docs/TOR_Kegiatan_LKMM_TH.docx
 
 import os
 import shutil
-import subprocess
+
 import docx
 
-SOURCE  = "docs/Format TOR Pergerakan .docx"
-DEST    = "docs/TOR_Kegiatan_LKMM_TH.docx"
-PDF_OUT = "public/assets/assignments/assignment-2-tor.pdf"
+SOURCE = "docs/Format TOR Pergerakan .docx"
+DEST = "docs/TOR_Kegiatan_LKMM_TH.docx"
 
 
 # ─── Paragraph replacements ──────────────────────────────────────────────────
 
 PARA_REPLACEMENTS = {
     "Nama Kegiatan": "LKMM-TH 2026",
-
     "-Cantumkan nama kegiatan, tema, serta tagline kegiatan yang diusung jika ada-": (
         "Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Himpunan (LKMM-TH) 2026.\n"
-        "Tema: \"Sinergi Kepemimpinan Adaptif di Era Digital\".\n"
-        "Tagline: \"Dari Materi ke Aksi, Dalam Satu Hari\"."
+        'Tema: "Sinergi Kepemimpinan Adaptif di Era Digital".\n'
+        'Tagline: "Dari Materi ke Aksi, Dalam Satu Hari".'
     ),
-
     "-Jelaskan bentuk kegiatan dan teknis yang akan dilaksanakan-": (
         "Kegiatan dilaksanakan dalam format One-Day Bootcamp & Mentorship, yaitu satu "
         "hari penuh yang dibagi menjadi tiga sesi:\n"
@@ -45,12 +42,10 @@ PARA_REPLACEMENTS = {
         "3. Sesi Sore (Sidang Mini): presentasi draf Proker, feedback, dan simulasi "
         "sidang dari mentor."
     ),
-
     "-Sebutkan peserta dan penerima manfaat dari kegiatan tersebut, baik dari jurusan/prodi maupun angkatan-": (
         "Seluruh mahasiswa baru Jurusan Teknik Komputer dan Informatika, "
         "Politeknik Negeri Bandung, Angkatan 2026."
     ),
-
     "-Sebutkan manfaat dari kegiatan tersebut-": (
         "1. Membekali mahasiswa angkatan 2026 dengan nilai kepemimpinan berintegritas, "
         "kolaboratif, dan manajerial dasar dalam berorganisasi.\n"
@@ -58,12 +53,12 @@ PARA_REPLACEMENTS = {
         "terjaga dan Proker yang dihasilkan lebih optimal.\n"
         "3. Melatih kemampuan berpikir kritis dan presentasi melalui sidang mini."
     ),
-
     "nama kegiatan": "LKMM-TH 2026",
 }
 
 
 # ─── Core helpers ─────────────────────────────────────────────────────────────
+
 
 def merge_and_replace(paragraph, reps):
     """Merge all runs into one, then replace. Handles cross-run placeholders."""
@@ -91,7 +86,12 @@ def set_cell(table, row, col, text):
 def fill_table_0_header(table):
     """Table 0: Nama Kegiatan, Pemateri, Jenis Kegiatan."""
     set_cell(table, 0, 0, "Nama Kegiatan")
-    set_cell(table, 0, 2, "LKMM-TH (Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Himpunan) 2026")
+    set_cell(
+        table,
+        0,
+        2,
+        "LKMM-TH (Latihan Kepemimpinan Manajemen Mahasiswa Tingkat Himpunan) 2026",
+    )
     set_cell(table, 1, 2, "(Disesuaikan dengan pemateri yang ditunjuk oleh jurusan)")
     set_cell(table, 2, 2, "Pelatihan Kepemimpinan Tingkat Himpunan")
 
@@ -114,15 +114,63 @@ def fill_table_1_indikator(table):
 def fill_table_2_susunan_acara(table):
     """Table 2: Susunan Acara (schedule on the day)."""
     schedule = [
-        ("07.30 - 08.00", "Registrasi Peserta",            "Panitia",              "Ruang Serbaguna JTK", "Koordinator Acara"),
-        ("08.00 - 08.30", "Pembukaan & Sambutan",           "Ketua Himakom / Kajur","Ruang Serbaguna JTK", "Koordinator Acara"),
-        ("08.30 - 10.00", "Materi: Kepemimpinan & Komunikasi","Pemateri",           "Ruang Serbaguna JTK", "Koordinator Humas"),
-        ("10.00 - 10.15", "Coffee Break",                   "Panitia",              "Ruang Serbaguna JTK", "Koordinator Konsumsi"),
-        ("10.15 - 12.00", "Materi: Manajemen Organisasi",   "Pemateri",             "Ruang Serbaguna JTK", "Koordinator Humas"),
-        ("12.00 - 13.00", "ISHOMA",                         "-",                    "-",                   "Koordinator Konsumsi"),
-        ("13.00 - 16.00", "FGD Sprint: Penyusunan Proker",  "Mentor (Kating)",      "Ruang Kelas JTK",    "Koordinator FGD"),
-        ("16.00 - 17.00", "Sidang Mini & Presentasi Proker", "Mentor & Pemateri",   "Ruang Serbaguna JTK", "Koordinator Acara"),
-        ("17.00 - 17.30", "Penutupan & Evaluasi",           "Ketua Pelaksana",      "Ruang Serbaguna JTK", "Koordinator Acara"),
+        (
+            "07.30 - 08.00",
+            "Registrasi Peserta",
+            "Panitia",
+            "Ruang Serbaguna JTK",
+            "Koordinator Acara",
+        ),
+        (
+            "08.00 - 08.30",
+            "Pembukaan & Sambutan",
+            "Ketua Himakom / Kajur",
+            "Ruang Serbaguna JTK",
+            "Koordinator Acara",
+        ),
+        (
+            "08.30 - 10.00",
+            "Materi: Kepemimpinan & Komunikasi",
+            "Pemateri",
+            "Ruang Serbaguna JTK",
+            "Koordinator Humas",
+        ),
+        (
+            "10.00 - 10.15",
+            "Coffee Break",
+            "Panitia",
+            "Ruang Serbaguna JTK",
+            "Koordinator Konsumsi",
+        ),
+        (
+            "10.15 - 12.00",
+            "Materi: Manajemen Organisasi",
+            "Pemateri",
+            "Ruang Serbaguna JTK",
+            "Koordinator Humas",
+        ),
+        ("12.00 - 13.00", "ISHOMA", "-", "-", "Koordinator Konsumsi"),
+        (
+            "13.00 - 16.00",
+            "FGD Sprint: Penyusunan Proker",
+            "Mentor (Kating)",
+            "Ruang Kelas JTK",
+            "Koordinator FGD",
+        ),
+        (
+            "16.00 - 17.00",
+            "Sidang Mini & Presentasi Proker",
+            "Mentor & Pemateri",
+            "Ruang Serbaguna JTK",
+            "Koordinator Acara",
+        ),
+        (
+            "17.00 - 17.30",
+            "Penutupan & Evaluasi",
+            "Ketua Pelaksana",
+            "Ruang Serbaguna JTK",
+            "Koordinator Acara",
+        ),
     ]
     for i, (waktu, item, pengisi, tempat, pj) in enumerate(schedule):
         row_idx = i + 1
@@ -148,10 +196,10 @@ def fill_table_3_kepanitiaan(table):
     # Rows 1-4 are placeholders
     data = [
         # (role already in col0, name, NIM)
-        (1, "(Nama Ketua Pelaksana)",       "(NIM)"),
+        (1, "(Nama Ketua Pelaksana)", "(NIM)"),
         (2, "(Nama Wakil Ketua Pelaksana)", "(NIM)"),
-        (3, "(Nama Koordinator)",           "(NIM)"),
-        (4, "(Nama Anggota)",               "(NIM)"),
+        (3, "(Nama Koordinator)", "(NIM)"),
+        (4, "(Nama Anggota)", "(NIM)"),
     ]
     for row_idx, name, nim in data:
         if row_idx < len(table.rows):
@@ -174,8 +222,20 @@ def fill_table_4_rab(table):
     # Columns: 0-3=komponen, 4=satuan, 5=volume, 6=harga satuan, 7=polban, 8=sponsor, 9=swadaya
     belanja_barang = [
         # (komponen, satuan, volume, harga_satuan, swadaya)
-        ("Konsumsi Pemateri & Panitia (makan siang)", "Paket", "1", "Rp 400.000", "Rp 400.000"),
-        ("Print Sertifikat, Kertas FGD, Fotokopi",    "Paket", "1", "Rp 150.000", "Rp 150.000"),
+        (
+            "Konsumsi Pemateri & Panitia (makan siang)",
+            "Paket",
+            "1",
+            "Rp 400.000",
+            "Rp 400.000",
+        ),
+        (
+            "Print Sertifikat, Kertas FGD, Fotokopi",
+            "Paket",
+            "1",
+            "Rp 150.000",
+            "Rp 150.000",
+        ),
     ]
 
     for i, (komponen, satuan, volume, harga, total) in enumerate(belanja_barang):
@@ -192,7 +252,7 @@ def fill_table_4_rab(table):
 
     # Belanja Jasa (rows 13, 14 under "525113 Belanja Jasa")
     belanja_jasa = [
-        ("Honorarium Pemateri (2 sesi)",             "Orang", "2",  "Rp 0",       "Rp 0"),
+        ("Honorarium Pemateri (2 sesi)", "Orang", "2", "Rp 0", "Rp 0"),
     ]
     for i, (komponen, satuan, volume, harga, total) in enumerate(belanja_jasa):
         row_idx = 13 + i
@@ -208,8 +268,14 @@ def fill_table_4_rab(table):
 
     # Belanja Transportasi (rows 17, 18 under "525115 Belanja Transportasi")
     belanja_transport = [
-        ("Banner / Spanduk acara (2x3m)",            "Lembar","1",  "Rp 150.000", "Rp 150.000"),
-        ("ID Card Panitia & Biaya Tak Terduga",      "Paket", "1",  "Rp 100.000", "Rp 100.000"),
+        ("Banner / Spanduk acara (2x3m)", "Lembar", "1", "Rp 150.000", "Rp 150.000"),
+        (
+            "ID Card Panitia & Biaya Tak Terduga",
+            "Paket",
+            "1",
+            "Rp 100.000",
+            "Rp 100.000",
+        ),
     ]
     for i, (komponen, satuan, volume, harga, total) in enumerate(belanja_transport):
         row_idx = 17 + i
@@ -231,13 +297,17 @@ def fill_table_5_signature(table):
     """Table 5: Signature block — fill Ketua Pelaksana name placeholder."""
     cell = table.rows[0].cells[2]  # right column
     for para in cell.paragraphs:
-        merge_and_replace(para, {
-            "Nama Terang": "(Nama Ketua Pelaksana)",
-            "NIM": "(NIM Ketua Pelaksana)",
-        })
+        merge_and_replace(
+            para,
+            {
+                "Nama Terang": "(Nama Ketua Pelaksana)",
+                "NIM": "(NIM Ketua Pelaksana)",
+            },
+        )
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
+
 
 def main():
     if not os.path.exists(SOURCE):
@@ -271,24 +341,9 @@ def main():
     print("[4/5] Saving document ...")
     doc.save(DEST)
 
-    print(f"[5/5] Converting to PDF: {PDF_OUT}")
-    os.makedirs(os.path.dirname(PDF_OUT), exist_ok=True)
-    result = subprocess.run(
-        ["pandoc", DEST, "-o", PDF_OUT,
-         "--pdf-engine=pdflatex",
-         "-V", "geometry:margin=2cm"],
-        capture_output=True, text=True
-    )
-    if result.returncode == 0:
-        print(f"\nTOR berhasil dibuat:")
-        print(f"  DOCX: {DEST}")
-        print(f"  PDF : {PDF_OUT}")
-    else:
-        print(f"\nDOCX berhasil: {DEST}")
-        print(f"PDF conversion failed: {result.stderr}")
-        print("  -> Fallback: buka DOCX di Word, Save As PDF manually.")
+    print(f"\nTOR berhasil dibuat:")
+    print(f"  DOCX: {DEST}")
 
 
 if __name__ == "__main__":
     main()
-
