@@ -253,12 +253,7 @@
       "id": 1,
       "title": "E-Commerce Platform",
       "description": "Confidential high-scale application serving education sector with over 50,000+ active users",
-      "techStack": [
-        "Flutter",
-        "TypeScript",
-        "PostgreSQL",
-        "REST API"
-      ],
+      "techStack": ["Flutter", "TypeScript", "PostgreSQL", "REST API"],
       "features": [
         "Clean Architecture",
         "State Management",
@@ -271,12 +266,7 @@
       "id": 2,
       "title": "B2B Services Platform",
       "description": "Enterprise-grade application with complex workflows and real-time synchronization",
-      "techStack": [
-        "Flutter",
-        "Go",
-        "MongoDB",
-        "GraphQL"
-      ],
+      "techStack": ["Flutter", "Go", "MongoDB", "GraphQL"],
       "features": [
         "Microservices Architecture",
         "Real-time Updates",
@@ -289,12 +279,7 @@
       "id": 3,
       "title": "Education Management System",
       "description": "Comprehensive platform for academic institution management and student engagement",
-      "techStack": [
-        "Flutter",
-        "TypeScript",
-        "Firebase",
-        "REST API"
-      ],
+      "techStack": ["Flutter", "TypeScript", "Firebase", "REST API"],
       "features": [
         "Role-based Access Control",
         "Analytics Dashboard",
@@ -390,7 +375,7 @@
       "id": 4,
       "title": "Video Solusi Strategis HCW & Fun Rutin",
       "type": "video",
-      "file": "/assets/assignments/assignment-4-video.mp4",
+      "file": "https://kemalstorage.my.id/public.php/dav/files/Z5go6yGsyxWr7MM/",
       "description": "Creative video presentation analyzing organizational challenges and proposing strategic solutions with direct narration",
       "objectives": [
         "Analyze HCW and Fun Rutin program challenges comprehensively",
