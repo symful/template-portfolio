@@ -341,7 +341,7 @@ def main():
     print("[4/5] Saving document ...")
     doc.save(DEST)
 
-    print(f"\nTOR berhasil dibuat:")
+    print("\nTOR berhasil dibuat:")
     print(f"  DOCX: {DEST}")
 
 
